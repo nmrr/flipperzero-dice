@@ -1,7 +1,3 @@
-// CC0 1.0 Universal (CC0 1.0)
-// Public Domain Dedication
-// https://github.com/nmrr
-
 #include <stdio.h>
 #include <furi.h>
 #include <gui/gui.h>
@@ -31,26 +27,21 @@ static void draw_callback(Canvas* canvas, void* ctx)
     canvas_set_font(canvas, FontPrimary);
     canvas_draw_str_aligned(canvas, 64, 32, AlignCenter, AlignBottom, "Flipper Dice");
 
-    if (state == 4)
-    {
-        canvas_set_font(canvas, FontSecondary);
-        canvas_draw_str_aligned(canvas, 64, 32+10, AlignCenter, AlignBottom, buffer);
-    }
+    canvas_set_font(canvas, FontBigNumbers);
+
+    if (state == 4) canvas_draw_str_aligned(canvas, 64, 32+20, AlignCenter, AlignBottom, buffer);
     else if (state >= 1)
     {
         switch(state) 
         {
             case 1  :
-                canvas_set_font(canvas, FontSecondary);
-                canvas_draw_str_aligned(canvas, 64, 32+10, AlignCenter, AlignBottom, ".");
+                canvas_draw_str_aligned(canvas, 64, 32+17, AlignCenter, AlignBottom, ".");
                 break;
             case 2  :
-                canvas_set_font(canvas, FontSecondary);
-                canvas_draw_str_aligned(canvas, 64, 32+10, AlignCenter, AlignBottom, "..");
+                canvas_draw_str_aligned(canvas, 64, 32+17, AlignCenter, AlignBottom, "..");
                 break;
             default  :
-                canvas_set_font(canvas, FontSecondary);
-                canvas_draw_str_aligned(canvas, 64, 32+10, AlignCenter, AlignBottom, "...");
+                canvas_draw_str_aligned(canvas, 64, 32+17, AlignCenter, AlignBottom, "...");
                 break;
         }
 
