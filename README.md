@@ -9,7 +9,7 @@ Assuming the toolchain is already installed, copy **flipper_dice** directory to 
 
 Plug your **Flipper Zero** and build the dice :
 ```
-./fbt DEBUG=no LIB_DEBUG=no COMPACT=yes launch_app APPSRC=applications_user/flipper_dice
+./fbt launch_app APPSRC=applications_user/flipper_dice
 ```
 
 The program will automatically be launched after compilation
